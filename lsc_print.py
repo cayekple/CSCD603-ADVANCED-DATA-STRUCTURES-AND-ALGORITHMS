@@ -15,8 +15,10 @@ def lcs_print(b, X, i, j):
         lcs_print(b, X, i, j - 1)
 
 
-X = "ABCBDAB"
-Y = "BDCABA"
+# X = "ABCBDAB"
+# Y = "BDCABA"
+X = "10010101"
+Y = "010110110"
 
 l, b = lcs_length(X, Y)
 
