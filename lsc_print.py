@@ -24,3 +24,13 @@ def lcs(s, t):
         return result1
     else:
         return result2
+
+
+ 
+# Driver program to test the above function
+X = "ABCBDAB"
+Y = "BDCABA"
+print("Length of LCS is ", lcs(X, Y))
+  
+# This code is contributed by Nikhil Kumar Singh(nickzuck_007)
+
