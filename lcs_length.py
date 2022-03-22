@@ -9,7 +9,7 @@ def lcs_length(X, Y):
   
     # declaring the array for storing the dp values
     L = [[0]*(n + 1) for i in range(m + 1)]
-    B = [[None]*(n + 1) for i in range(m + 1)]
+    B = [[0]*(n + 1) for i in range(m + 1)]
   
     """Following steps build L[m + 1][n + 1] in bottom up fashion
     Note: L[i][j] contains length of LCS of X[0..i-1]
@@ -28,6 +28,6 @@ def lcs_length(X, Y):
                 L[i][j] = L[i][j-1]
                 B[i][j] = '←'
                 
-    print(tabulate(L))
-    print(tabulate(B))
+    # print(tabulate(L))
+    # print(tabulate(B))
     return L, B

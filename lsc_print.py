@@ -1,36 +1,23 @@
+from lcs_length import lcs_length
 
-def lcs_print(b,X,i,j):
+
+def lcs_print(b, X, i, j):
+    # print(i, j, b[i][j])
     if i == 0 or j == 0:
         return
 
     if b[i][j] == '↖︎':
         lcs_print(b, X, i - 1, j - 1)
-        print X[i]
+        print(X[i-1])
     elif b[i][j] == '↑':
         lcs_print(b, X, i - 1, j)
     else:
         lcs_print(b, X, i, j - 1)
 
 
-
-def lcs(s, t):
-    if not s or not t:
-        return ''
-    if s[0] is t[0]:
-        return s[0] + lcs(s[1:], t[1:])
-    result1 = lcs(s[1:], t)
-    result2 = lcs(s, t[1:])
-    if len(result1) > len(result2):
-        return result1
-    else:
-        return result2
-
-
- 
-# Driver program to test the above function
 X = "ABCBDAB"
 Y = "BDCABA"
-print("Length of LCS is ", lcs(X, Y))
-  
-# This code is contributed by Nikhil Kumar Singh(nickzuck_007)
 
+l, b = lcs_length(X, Y)
+
+lcs_print(b, X, len(X), len(Y))
