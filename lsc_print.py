@@ -1,4 +1,12 @@
 # coding: utf-8
+
+'''
+    Question 1(b)
+
+    Using the recursive procedure to prints out an LCS of X and Y in the proper, 
+    forward order.
+'''
+
 from lcs_length import lcs_length
 
 def lcs_print(b, X, i, j):

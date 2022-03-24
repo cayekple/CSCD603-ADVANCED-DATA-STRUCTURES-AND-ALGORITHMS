@@ -1,26 +1,22 @@
 # coding: utf-8
 '''
-    Finding the LCS_length().
-
-    i.find the length of the two strings
-    ii.declare an array for storing the dp values
-    iii.build L[m + 1][n + 1] in bottom up fashion
-        Note:
-            L[i][j] contains length of LCS of X[0..i-1]
-            and Y[0..j-1]
+    Question 1(a)
+    
+    Computing the length of an LCS
 '''
 
+
 def lcs_length(X, Y):
-    
+
     m = len(X)
     n = len(Y)
-  
+
     L = [[0]*(n + 1) for i in range(m + 1)]
     B = [[0]*(n + 1) for i in range(m + 1)]
-  
+
     for i in range(m + 1):
         for j in range(n + 1):
-            if i == 0 or j == 0 :
+            if i == 0 or j == 0:
                 L[i][j] = 0
             elif X[i-1] == Y[j-1]:
                 L[i][j] = L[i-1][j-1]+1
@@ -31,5 +27,5 @@ def lcs_length(X, Y):
             else:
                 L[i][j] = L[i][j-1]
                 B[i][j] = '←'
-                
+
     return L, B
